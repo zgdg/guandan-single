@@ -1,0 +1,16 @@
+{
+  "_doc": "字段说明、默认值与报错行为见同目录 README.md；本文件必须保持为合法 JSON，不能写注释。",
+  "commentary": {
+    "enabled": "{{COMMENTARY_ENABLED|auto}}",
+    "host": "127.0.0.1",
+    "port": 8788,
+    "endpoint": "/api/commentary",
+    "model": {
+      "baseUrl": "{{LLM_BASE_URL}}",
+      "name": "{{LLM_MODEL}}",
+      "apiKey": "{{LLM_API_KEY}}",
+      "temperature": "{{LLM_TEMPERATURE|0.3}}",
+      "timeoutMs": "{{LLM_TIMEOUT_MS|5000}}"
+    }
+  }
+}
