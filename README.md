@@ -46,18 +46,18 @@ npm run dev:api
 
 以下脚本均来自 [package.json](package.json)：
 
-| 脚本 | 实际命令 | 作用 |
-| --- | --- | --- |
-| `npm run dev` | `vite` | 启动前端开发服务器 |
-| `npm run dev:api` | `tsx server/index.ts` | 启动 AI 点评代理 |
-| `npm run build` | `tsc --noEmit && vite build` | 类型检查后构建到 `dist/` |
-| `npm run typecheck` | `tsc --noEmit` | 只做 TypeScript 类型检查 |
-| `npm test` | `vitest run` | 运行全部用例 |
-| `npm run test:rules` | `vitest run tests/rules` | 只运行规则用例（不包含 `tests/config`） |
-| `npm run test:watch` | `vitest` | 以监听模式运行用例 |
-| `npm run sim` | `tsx src/cli/simulate.ts` | 自动对局模拟，统计非法动作/卡死/牌数守恒 |
-| `npm run sim:arena` | `tsx src/cli/arena.ts` | 两种 AI 难度的离线对战强度对比 |
-| `npm run bench` | `tsx src/cli/bench.ts` | 引擎吞吐基准，输出 P50/P95/P99 |
+| 脚本                   | 实际命令                         | 作用                          |
+| -------------------- | ---------------------------- | --------------------------- |
+| `npm run dev`        | `vite`                       | 启动前端开发服务器                   |
+| `npm run dev:api`    | `tsx server/index.ts`        | 启动 AI 点评代理                  |
+| `npm run build`      | `tsc --noEmit && vite build` | 类型检查后构建到 `dist/`            |
+| `npm run typecheck`  | `tsc --noEmit`               | 只做 TypeScript 类型检查          |
+| `npm test`           | `vitest run`                 | 运行全部用例                      |
+| `npm run test:rules` | `vitest run tests/rules`     | 只运行规则用例（不包含 `tests/config`） |
+| `npm run test:watch` | `vitest`                     | 以监听模式运行用例                   |
+| `npm run sim`        | `tsx src/cli/simulate.ts`    | 自动对局模拟，统计非法动作/卡死/牌数守恒       |
+| `npm run sim:arena`  | `tsx src/cli/arena.ts`       | 两种 AI 难度的离线对战强度对比           |
+| `npm run bench`      | `tsx src/cli/bench.ts`       | 引擎吞吐基准，输出 P50/P95/P99       |
 
 传递参数时使用 `--` 分隔：
 

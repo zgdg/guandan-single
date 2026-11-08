@@ -1091,11 +1091,12 @@ button {
   justify-content: center;
   gap: 8px;
   max-width: 100%;
-  padding: 9px 16px;
+  /* 字号放大一档，纵向内边距相应收紧，汇总条高度不增。 */
+  padding: 7px 14px;
   border-radius: 999px;
   background: rgba(4, 26, 19, 0.58);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 13px;
+  font-size: 15px;
   color: #c8d3cd;
   white-space: nowrap;
 }
@@ -1105,7 +1106,7 @@ button {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
   color: #c8d3cd;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .trick-summary-owner {
@@ -2781,4 +2782,506 @@ button {
   padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
   background: linear-gradient(to top, rgba(4, 20, 15, 0.96), rgba(4, 20, 15, 0.6));
   border-top: 1px solid var(--panel-border);
+}
+
+/* ---------------- 桌面端（≥900）整体字号放大一档 ----------------
+   只放大字号与行高，不改变布局结构、座位位置与小牌尺寸。
+   10–11px 的辅助标注同步 +1，仍保持最小层级。
+   单位行高沿用各元素原有的无单位 line-height，随字号自动放大；
+   唯一的固定行高（决策徽标 16px）在下面单独改为 18px。 */
+
+@media (min-width: 900px) {
+  /* 通用按钮与提示 */
+  .btn {
+    font-size: 17px;
+  }
+
+  .btn-small {
+    font-size: 14px;
+  }
+
+  .btn-large {
+    font-size: 17px;
+  }
+
+  .notice {
+    font-size: 15px;
+  }
+
+  .notice-close {
+    font-size: 19px;
+  }
+
+  /* 页头标题与副标题 */
+  .game-title strong {
+    font-size: 18px;
+  }
+
+  .game-title span {
+    font-size: 12px;
+  }
+
+  .level-pill {
+    font-size: 12px;
+  }
+
+  .speed-mini {
+    font-size: 12px;
+  }
+
+  .decision-toggle {
+    font-size: 13px;
+  }
+
+  .decision-toggle-count {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* 座位名 / 张数 / 状态 / 小牌 */
+  .seat-avatar {
+    font-size: 14px;
+  }
+
+  .seat-name {
+    font-size: 14px;
+  }
+
+  .seat-style {
+    font-size: 11px;
+  }
+
+  .seat-count {
+    font-size: 12px;
+  }
+
+  .seat-count strong {
+    font-size: 19px;
+  }
+
+  .seat-state {
+    font-size: 12px;
+  }
+
+  .seat-place {
+    font-size: 15px;
+  }
+
+  .seat-mini-rank {
+    font-size: 16px;
+  }
+
+  /* 两位数保持略收，露出宽度不变。 */
+  .seat-mini-rank-wide {
+    font-size: 15px;
+    letter-spacing: -0.5px;
+  }
+
+  .seat-mini-suit {
+    font-size: 13px;
+  }
+
+  .seat-mini-more,
+  .seat-last-pass,
+  .seat-last-idle {
+    font-size: 13px;
+  }
+
+  /* 中央汇总 */
+  .trick-summary {
+    font-size: 16px;
+  }
+
+  .trick-summary-tag {
+    font-size: 14px;
+  }
+
+  /* 进贡 / 还贡公开区 */
+  .tribute-flow {
+    font-size: 13px;
+  }
+
+  .tribute-flow-title {
+    font-size: 16px;
+  }
+
+  .tribute-step,
+  .tribute-step-sep {
+    font-size: 12px;
+  }
+
+  .tribute-leader {
+    font-size: 13px;
+  }
+
+  .tribute-rel-index {
+    font-size: 11px;
+  }
+
+  .tribute-arrow {
+    font-size: 12px;
+  }
+
+  .tribute-card-rank {
+    font-size: 16px;
+  }
+
+  .tribute-card-suit {
+    font-size: 12px;
+  }
+
+  .tribute-pending,
+  .tribute-you-tag {
+    font-size: 12px;
+  }
+
+  .tribute-guide {
+    font-size: 13px;
+  }
+
+  .tribute-guide-sub {
+    font-size: 12px;
+  }
+
+  .tribute-notice {
+    font-size: 14px;
+  }
+
+  /* 建议条标题与理由 */
+  .suggestion-title {
+    font-size: 17px;
+  }
+
+  .suggestion-reason {
+    font-size: 14px;
+  }
+
+  .suggestion-icon {
+    font-size: 17px;
+  }
+
+  .suggestion-more {
+    font-size: 12px;
+  }
+
+  .suggestion-chip {
+    font-size: 12px;
+  }
+
+  .suggestion-parallel,
+  .suggestion-alt-note,
+  .suggestion-risk,
+  .suggestion-disclaimer {
+    font-size: 13px;
+  }
+
+  .suggestion-section-title {
+    font-size: 13px;
+  }
+
+  .suggestion-reasons li {
+    font-size: 13px;
+  }
+
+  .suggestion-alt-index {
+    font-size: 12px;
+  }
+
+  .suggestion-alt-cards {
+    font-size: 13px;
+  }
+
+  .suggestion-mini-rank {
+    font-size: 14px;
+  }
+
+  .suggestion-mini-suit {
+    font-size: 13px;
+  }
+
+  /* 已选托盘 */
+  .selected-tray-label {
+    font-size: 12px;
+  }
+
+  .selected-mini-rank {
+    font-size: 15px;
+  }
+
+  .selected-mini-suit {
+    font-size: 11px;
+  }
+
+  .selected-more {
+    font-size: 12px;
+  }
+
+  .selected-tray-hint {
+    font-size: 11px;
+  }
+
+  /* 决策侧栏 */
+  .decision-panel-head {
+    font-size: 13px;
+  }
+
+  .decision-turn {
+    font-size: 12px;
+  }
+
+  .decision-item-body {
+    font-size: 12px;
+  }
+
+  .decision-note {
+    font-size: 12px;
+  }
+
+  /* 结算页 */
+  .settlement-kicker {
+    font-size: 12px;
+  }
+
+  .settlement-head h2 {
+    font-size: 28px;
+  }
+
+  .settlement-head p {
+    font-size: 14px;
+  }
+
+  .place-row {
+    font-size: 14px;
+  }
+
+  .upgrade-label {
+    font-size: 12px;
+  }
+
+  .settlement-upgrade strong {
+    font-size: 17px;
+  }
+
+  .upgrade-note {
+    font-size: 13px;
+  }
+
+  .level-row {
+    font-size: 14px;
+  }
+
+  .settlement-hint {
+    font-size: 13px;
+  }
+
+  /* 规则弹窗 */
+  .modal-head h2 {
+    font-size: 20px;
+  }
+
+  .rules-section h3 {
+    font-size: 15px;
+  }
+
+  .rules-section ul {
+    font-size: 14px;
+  }
+
+  .modal-foot {
+    font-size: 13px;
+  }
+
+  /* 复盘页 */
+  .review-head-title {
+    font-size: 15px;
+  }
+
+  .review-summary-row {
+    font-size: 13px;
+  }
+
+  .review-summary-row strong {
+    font-size: 15px;
+  }
+
+  .review-commentary-status {
+    font-size: 12px;
+  }
+
+  .review-commentary-text {
+    font-size: 14px;
+  }
+
+  .review-commentary-muted {
+    font-size: 13px;
+  }
+
+  .review-commentary-usage {
+    font-size: 12px;
+  }
+
+  .review-section-title {
+    font-size: 14px;
+  }
+
+  .review-decision-head {
+    font-size: 13px;
+  }
+
+  .review-verdict {
+    font-size: 12px;
+  }
+
+  .review-compare-label {
+    font-size: 12px;
+  }
+
+  .review-cards {
+    font-size: 14px;
+  }
+
+  .review-note {
+    font-size: 13px;
+  }
+
+  .review-snapshot {
+    font-size: 12px;
+  }
+
+  .review-empty {
+    font-size: 13px;
+  }
+
+  /* 首页正文 */
+  .hero-kicker {
+    font-size: 13px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+  }
+
+  .home-head p {
+    font-size: 14px;
+  }
+
+  .home-hint {
+    font-size: 14px;
+  }
+
+  .feature h3 {
+    font-size: 17px;
+  }
+
+  .feature p {
+    font-size: 14px;
+  }
+
+  .speed-row,
+  .speed-btn {
+    font-size: 14px;
+  }
+
+  .home-foot {
+    font-size: 13px;
+  }
+
+  .card-joker-face {
+    font-size: 16px;
+  }
+
+  .card-wild {
+    font-size: 10px;
+  }
+
+  .deal-overlay {
+    font-size: 15px;
+  }
+
+  /* 各宽度档的手牌点数与花色同步 +1，牌面尺寸与叠压不变。 */
+  .card-corner {
+    font-size: 19px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 15px;
+  }
+
+  .card-suit {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .card-corner {
+    font-size: 19px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 15px;
+  }
+
+  .card-suit {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .card-corner {
+    font-size: 20px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 16px;
+  }
+
+  .card-suit {
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .card-corner {
+    font-size: 21px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 16px;
+  }
+
+  .card-suit {
+    font-size: 29px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .card-corner {
+    font-size: 21px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 17px;
+  }
+
+  .card-suit {
+    font-size: 29px;
+  }
+
+  .suggestion-title {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .card-corner {
+    font-size: 23px;
+  }
+
+  .card-corner span:last-child {
+    font-size: 18px;
+  }
+
+  .card-suit {
+    font-size: 33px;
+  }
 }
